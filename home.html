@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    {% if form: %}
+        <form action="/" method="post">
+            {{ form.name }}
+            <input type="submit" value="SUBMIT">
+        </form>
+    {% endif %}
+
+    {% if current_user.is_authenticated %}
+        Hi {{ current_user.username }}
+        <a href="/logout">LOGOUT</a>
+    {% endif %}
+
+{% endblock %}
