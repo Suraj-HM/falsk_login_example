@@ -1,4 +1,4 @@
-# falsk_login_example
+# flask_login_example
 A simple authentication system built with flask and flask_login
 
 You can install all the required python packages using the command below .  
